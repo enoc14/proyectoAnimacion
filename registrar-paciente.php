@@ -22,51 +22,55 @@ include('header-doctor.php');
 
 						<form name="contact_form">
 							<div class="row">
-
-								<div id="gNombreReg" class="form-group col-md-12" style="margin-bottom: 10px">
+								<div id="fgNombre" class="form-group col-md-12 col-lg-6" style="margin-bottom: 10px">
 									<div class="input-group">
 										<div class="input-group-addon">
 											<span class="glyphicon glyphicon-user"></span>
 										</div>
-										<input type="text" name="nombre" class="form-control" placeholder="Nombre y Apellídos">
+										<input id="inputNombre" type="text" name="nombre" class="form-control" placeholder="Nombre y Apellídos">
 									</div>
-								</div>	
+									<p id="errorNombre" class="help-block text-danger" style="display: none;" >Ingrese su nombre completo</p>
+								</div>
 
-								<div class="form-group col-md-12" style="margin-bottom: 10px">
+								<div id="fgCorreo" class="form-group col-md-12 col-lg-6" style="margin-bottom: 10px">
 									<div class="input-group">
 										<div class="input-group-addon">
 											<i class="glyphicon glyphicon-envelope"></i>
 										</div>
-										<input type="email" name="mail" class="form-control" placeholder="Correo" onKeyPress="removeChecks();">
-									</div>	
+										<input id="inputCorreo" type="email" name="mail" class="form-control" placeholder="Correo" onKeyPress="removeChecks();">
+									</div>
+									<p id="errorCorreo" class="help-block text-danger" style="display: none;" >Ingrese un correo válido</p>	
 								</div>
 
-								<div class="form-group col-md-12" style="margin-bottom: 10px">
+								<div id="fgFecha" class="form-group col-md-12 col-lg-6" style="margin-bottom: 10px">
 									<div class="input-group">
 										<div class="input-group-addon">
 											<i class="glyphicon glyphicon-calendar"></i>
 										</div>
-										<input type="text" id="datepicker" class="form-control" name="da" placeholder="Fecha de Nacimiento">
+										<input id="inputFecha" type="text" id="datepicker" class="form-control" name="da" placeholder="Fecha de Nacimiento">
 									</div>
+									<p id="errorFecha" class="help-block text-danger" style="display: none;" >Ingrese una fecha válida</p>
 								</div>
 
-								<div class="input-group col-md-12" style="margin-bottom: 10px">
+								<div id="fgNumeroTelefono" class="form-group col-md-6 col-lg-6" style="margin-bottom: 10px">
+									<div class="input-group">
+										<div class="input-group-addon">
+											<span class="glyphicon glyphicon-phone"></span>
+										</div>
+										<input id="inputNumeroTelefono" type="number" name="tel" class="form-control" placeholder="Número de Telefono">
+									</div>
+									<p id="errorTel" class="help-block text-danger" style="display: none;" >Ingrese un número de telefono válido</p>
+								</div>
+
+								<div class="input-group col-md-6 col-lg-12" style="margin-bottom: 10px">
 									<select class="form-control">
 										<option>Hombre</option>
 										<option>Mujer</option>
 									</select>
 								</div>
-
-                                <div id="gNombreReg" class="form-group col-md-12" style="margin-bottom: 10px">
-									<div class="input-group">
-										<div class="input-group-addon">
-											<span class="glyphicon glyphicon-user"></span>
-										</div>
-										<input type="text" name="nombre" class="form-control" placeholder="Número de Telefono">
-									</div>
-								</div>
+                                
 							</div>
-							<a id="validaRegistro" class="btn btn-default btn-block disabled">REGISTRARME</a>
+							<a id="btnRegistro" class="btn btn-default btn-block disabled">REGISTRARME</a>
 						</form>
 					</div>
 				</div>

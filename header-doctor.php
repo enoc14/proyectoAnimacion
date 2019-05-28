@@ -135,7 +135,7 @@
                                 <a href="ver-pacientes.php"><i class="fa fa-users"></i>Pacientes</a>
                             </li>
 
-                            <li class="<?php if($url == "nosotros.php") echo "active"; ?> text-center">
+                            <li class="<?php if($url == "registrar-paciente.php") echo "active"; ?> text-center">
                                 <a href="registrar-paciente.php"><i class="fa fa-edit"></i>Registrar Nuevo Paciente</a>
                             </li>
 
