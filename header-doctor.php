@@ -122,7 +122,7 @@
 
                         <a class="navbar-brand" href="index.html"><img src="images/logo-green.png" alt="" title=""></a>
 
-                        <p class="text-center" style="margin-bottom: 0px">Hola, Doctor <b>Profesor Patricio<b></p>
+                        <p class="text-center" style="margin-bottom: 0px">Hola, Doctor <b>Profesor Patricio</b></p>
 
                     </div>
 
@@ -135,8 +135,8 @@
                                 <a href="ver-pacientes.php"><i class="fa fa-users"></i>Pacientes</a>
                             </li>
 
-                            <li class="<?php if($url == "nosotros.php") echo "active"; ?> text-center">
-                                <a href="#"><i class="fa fa-edit"></i>Registrar Nuevo Paciente</a>
+                            <li class="<?php if($url == "registrar-paciente.php") echo "active"; ?> text-center">
+                                <a href="registrar-paciente.php"><i class="fa fa-edit"></i>Registrar Nuevo Paciente</a>
                             </li>
 
                             <li class="<?php if($url == "justificacion.php") echo "active"; ?>">
