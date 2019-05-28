@@ -20,57 +20,54 @@ include('header-doctor.php');
 						  	<strong>¡Ha ocurrido un error con nuestro servidor!</strong> Intente más tarde.
 						</div>
 
-						<form name="contact_form">
+						<form name="form-registrarPaciente">
 							<div class="row">
-								<div id="fgNombre" class="form-group col-md-12 col-lg-6" style="margin-bottom: 10px">
+								<div id="fgNombrePaciente" class="form-group col-md-6 col-lg-6" style="margin-bottom: 10px">
 									<div class="input-group">
 										<div class="input-group-addon">
 											<span class="glyphicon glyphicon-user"></span>
 										</div>
-										<input id="inputNombre" type="text" name="nombre" class="form-control" placeholder="Nombre y Apellídos">
+										<input id="inputNombrePaciente" type="text" name="nombre" class="form-control" placeholder="Nombre y Apellídos" onKeyPress="verificarEntradasRegistroPaciente(1)">
 									</div>
-									<p id="errorNombre" class="help-block text-danger" style="display: none;" >Ingrese su nombre completo</p>
+									<p id="errorNombreRegistroPaciente" class="help-block text-danger" style="display: none;" >Ingrese su nombre completo</p>
 								</div>
-
-								<div id="fgCorreo" class="form-group col-md-12 col-lg-6" style="margin-bottom: 10px">
+								<div id="fgCorreoPaciente" class="form-group col-md-6 col-lg-6" style="margin-bottom: 10px">
 									<div class="input-group">
 										<div class="input-group-addon">
 											<i class="glyphicon glyphicon-envelope"></i>
 										</div>
-										<input id="inputCorreo" type="email" name="mail" class="form-control" placeholder="Correo" onKeyPress="removeChecks();">
+										<input id="inputCorreoPaciente" type="email" name="mail" class="form-control" placeholder="Correo" onKeyPress="verificarEntradasRegistroPaciente(2)">
 									</div>
-									<p id="errorCorreo" class="help-block text-danger" style="display: none;" >Ingrese un correo válido</p>	
+									<p id="errorCorreoRegistroPaciente" class="help-block text-danger" style="display: none;" >Ingrese un correo válido</p>	
 								</div>
-
-								<div id="fgFecha" class="form-group col-md-12 col-lg-6" style="margin-bottom: 10px">
+							</div class="row">
+							<div class="row">
+								<div id="fgFechaPaciente" class="form-group col-md-12 col-lg-6" style="margin-bottom: 10px">
 									<div class="input-group">
 										<div class="input-group-addon">
 											<i class="glyphicon glyphicon-calendar"></i>
 										</div>
-										<input id="inputFecha" type="text" id="datepicker" class="form-control" name="da" placeholder="Fecha de Nacimiento">
+										<input id="inputFechaPaciente" type="text" id="datepicker" class="form-control" name="da" placeholder="DD/MM/YY" onKeyPress="verificarEntradasRegistroPaciente(3)">
 									</div>
-									<p id="errorFecha" class="help-block text-danger" style="display: none;" >Ingrese una fecha válida</p>
+									<p id="errorFechaRegistroPaciente" class="help-block text-danger" style="display: none;" >Ingrese una fecha válida</p>
 								</div>
-
-								<div id="fgNumeroTelefono" class="form-group col-md-6 col-lg-6" style="margin-bottom: 10px">
+								<div id="fgTelefonoPaciente" class="form-group col-md-6 col-lg-6" style="margin-bottom: 10px">
 									<div class="input-group">
 										<div class="input-group-addon">
 											<span class="glyphicon glyphicon-phone"></span>
 										</div>
-										<input id="inputNumeroTelefono" type="number" name="tel" class="form-control" placeholder="Número de Telefono">
+										<input id="inputTelefonoPaciente" type="number" name="tel" class="form-control" placeholder="Número de Telefono" onKeyPress="verificarEntradasRegistroPaciente(4)">
 									</div>
-									<p id="errorTel" class="help-block text-danger" style="display: none;" >Ingrese un número de telefono válido</p>
+									<p id="errorTelefonoRegistroPaciente" class="help-block text-danger" style="display: none;" >Ingrese un número de telefono válido</p>
 								</div>
-
 								<div class="input-group col-md-6 col-lg-12" style="margin-bottom: 10px">
 									<select class="form-control">
 										<option>Hombre</option>
 										<option>Mujer</option>
 									</select>
 								</div>
-                                
 							</div>
-							<a id="btnRegistro" class="btn btn-default btn-block disabled">REGISTRARME</a>
+							<a id="btnRegistrarPaciente" class="btn btn-default btn-block disabled">REGISTRARME</a>
 						</form>
 					</div>
 				</div>

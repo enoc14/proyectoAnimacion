@@ -1,5 +1,19 @@
 // JavaScript Document
 
+/////////////////////////////////////////Registrar Paciente Form////////////////////////////////////
+var nombreRegistroPaciente= document.getElementById("inputNombrePaciente");
+var correoRegistroPaciente= document.getElementById("inputCorreoPaciente");
+var fechaRegistroPaciente= document.getElementById("inputFechaPaciente");
+var telefonoRegistroPaciente= document.getElementById("inputTelefonoPaciente");
+var msgErrorNombreRegistroPaciente= document.getElementById("errorNombreRegistroPaciente");
+var msgErrorCorreoRegistroPaciente= document.getElementById("errorCorreoRegistroPaciente");
+var msgErrorFechaRegistroPaciente= document.getElementById("errorFechaRegistroPaciente");
+var msgErrorTelefonoRegistroPaciente= document.getElementById("errorTelefonoRegistroPaciente");
+var formGroupNombreRegistroPaciente= document.getElementById("fgNombrePaciente");
+var formGroupCorreoRegistroPaciente= document.getElementById("fgCorreoPaciente");
+var formGroupFechaRegistroPaciente= document.getElementById("fgFechaPaciente");
+var formGroupTelefonoRegistroPaciente= document.getElementById("fgTelefonoPaciente");
+var btnRegistrarPaciente= document.getElementById("btnRegistrarPaciente");
 
 	///////////////////////////////////////// Contacto Form //////////////////////////////////////////
 
@@ -20,11 +34,10 @@
 	var alertaw = $("#alert-contact-d");
 
 	var bandera = [0,0,0,0];
+	var pattern1= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	var regDate= /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{3}$/;
 		
-	function removeChecksContact(num){
-
-		var pattern1= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-		
+	function removeChecksContact(num){	
 		switch(num) {
 			case 1:
 				if (nombre.value.length <= 10){
@@ -82,9 +95,71 @@
 				}
 				break;
 		}
-
 		if(!bandera.includes(0))
 			validaContacto.classList.remove("disabled");
+	}
+//////////////////////Opciones de virificacion para Registrar Paciente////////////////////////////
+	function verificarEntradasRegistroPaciente(num){
+		switch(num){
+			case 1:
+				if (nombreRegistroPaciente.value.length < 10){
+					formGroupNombreRegistroPaciente.classList.remove("has-success");
+					formGroupNombreRegistroPaciente.classList.add("has-error");
+					msgErrorNombreRegistroPaciente.style.display = "block";
+					bandera[0] = 0;
+				}else{
+					formGroupNombreRegistroPaciente.classList.remove("has-error");
+					formGroupNombreRegistroPaciente.classList.add("has-success");
+					msgErrorNombreRegistroPaciente.style.display = "none";
+					bandera[0] = 1;
+				}
+				break;
+			case 2:
+				if(!pattern1.test(correoRegistroPaciente.value)){
+					formGroupCorreoRegistroPaciente.classList.remove("has-success");
+					formGroupCorreoRegistroPaciente.classList.add("has-error");
+					msgErrorCorreoRegistroPaciente.style.display = "block";
+					bandera[1] = 0;
+				}else{
+					formGroupCorreoRegistroPaciente.classList.remove("has-error");
+					formGroupCorreoRegistroPaciente.classList.add("has-success");
+					msgErrorCorreoRegistroPaciente.style.display = "none";
+					bandera[1] = 1;
+				}
+				break;
+			case 3:
+				if(!regDate.test(fechaRegistroPaciente.value)){
+					formGroupFechaRegistroPaciente.classList.remove("has-success");
+					formGroupFechaRegistroPaciente.classList.add("has-error");
+					msgErrorFechaRegistroPaciente.style.display = "block";
+					bandera[2] = 0;
+				}else{
+					formGroupFechaRegistroPaciente.classList.remove("has-error");
+					formGroupFechaRegistroPaciente.classList.add("has-success");
+					msgErrorFechaRegistroPaciente.style.display = "none";
+					bandera[2] = 1;
+				}
+				break;
+			case 4:
+				console.log(telefonoRegistroPaciente.value.length);
+				if(!(telefonoRegistroPaciente.value.length == 10)){
+					formGroupTelefonoRegistroPaciente.classList.remove("has-success");
+					formGroupTelefonoRegistroPaciente.classList.add("has-error");
+					msgErrorTelefonoRegistroPaciente.style.display = "block";
+					bandera[3] = 0;	
+					console.log("pintar rojo");
+				}
+				else{
+					formGroupTelefonoRegistroPaciente.classList.remove("has-error");
+					formGroupTelefonoRegistroPaciente.classList.add("has-success");
+					msgErrorTelefonoRegistroPaciente.style.display = "none";
+					bandera[3] = 1;
+					console.log("pintar verde");
+				}
+		}
+		if(!bandera.includes(0)){
+			btnRegistrarPaciente.classList.remove("disabled");
+		}
 	}
 
 	validaContacto.addEventListener("click", function(){
