@@ -5,7 +5,7 @@
 <div id="sub-page-content" class="clearfix margin-top-50">
 
     <div class="container">
-        <h2 class="light bordered">Service <span>style 3</span></h2>
+        <h2 class="light bordered">IR A <span>ACTIVIDADES</span></h2>
         <!-- BEGIN GALLERY SECTION -->
 
         <section class="gallery no-padding">
@@ -22,7 +22,7 @@
                                 <img src="images/gallery-img1.jpg" alt="">
                             </div>
                             <div class="gallery-item-info">
-                                <p><a href="#.">seniour staff</a><span>Pediatric clinic</span></p>
+                                <p><a href="#.">SERIES DE COLORES</a><span>Pediatric clinic</span></p>
                             </div>
                         </div>
 
@@ -35,7 +35,7 @@
                                 <img src="images/gallery-img1.jpg" alt="">
                             </div>
                             <div class="gallery-item-info">
-                                <p><a href="#.">seniour staff</a><span>Pediatric clinic</span></p>
+                                <p><a href="#.">OPERACIONES ARITMÉTICAS</a><span>Pediatric clinic</span></p>
                             </div>
                         </div>
 
@@ -48,7 +48,7 @@
                                 <img src="images/gallery-img1.jpg" alt="">
                             </div>
                             <div class="gallery-item-info">
-                                <p><a href="#.">seniour staff</a><span>Pediatric clinic</span></p>
+                                <p><a href="#.">RELACION IMAGEN - SONIDO</a><span>Pediatric clinic</span></p>
                             </div>
                         </div>
 
