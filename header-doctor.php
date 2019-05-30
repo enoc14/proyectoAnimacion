@@ -16,7 +16,7 @@
 
     <link rel="icon" type="image/png" href="images/favicon.png">
 
-    <title>ESQUITER</title>
+    <title><?php echo $title; ?></title>
 
     <meta name="description" content="">
 
@@ -123,7 +123,7 @@
 
                         <a class="navbar-brand" href="index.html"><img src="images/logo-green.png" alt="" title=""></a>
 
-                        <p class="text-center" style="margin-bottom: 0px">Hola, Doctor <b>Profesor Patricio</b></p>
+                        <p class="text-center" style="margin-bottom: 0px">Hola, Doctor <b><?php echo $nameDoctor; ?></b></p>
 
                     </div>
 
@@ -142,6 +142,10 @@
 
                             <li class="<?php if($url == "justificacion.php") echo "active"; ?>">
                                 <a href="#"><i class="fa fa-cog fa-spin"></i>Configuración</a>
+                            </li>
+
+                            <li>
+                                <a href="logout.php"><i class="fa fa-sign-out"></i>Cerrar Sesión</a>
                             </li>
                         </ul>
 
