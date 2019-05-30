@@ -140,8 +140,8 @@
                                 <a href="registrar-paciente.php"><i class="fa fa-edit"></i>Registrar Nuevo Paciente</a>
                             </li>
 
-                            <li class="<?php if($url == "justificacion.php") echo "active"; ?>">
-                                <a href="#"><i class="fa fa-cog fa-spin"></i>Configuración</a>
+                            <li class="<?php if($url == "configuracion-doctor.php") echo "active"; ?>">
+                                <a href="configuracion-doctor.php"><i class="fa fa-cog fa-spin"></i>Configuración</a>
                             </li>
 
                             <li>

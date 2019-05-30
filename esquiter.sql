@@ -7,7 +7,7 @@ use esquiter;
 create table USUARIO(
 	id_Usuario int(7) auto_increment,
     tipo_Usuario varchar(20) not null,
-	correo_Usuario varchar(20) not null,
+	correo_Usuario varchar(60) not null,
     pass_Usuario varchar(30) not null,
     key(id_Usuario),
     
@@ -16,8 +16,8 @@ create table USUARIO(
 
 create table DOCTOR(
 	id_Doctor int(7) auto_increment,
-    nombre_Doctor varchar(30) not null,
-    correo_Usuario_Doctor varchar(20) not null,
+    nombre_Doctor varchar(100) not null,
+    correo_Usuario_Doctor varchar(60) not null,
     cedula_Doctor varchar(9) not null,
     
     constraint PK_DOCTOR primary key(id_Doctor),
@@ -27,11 +27,11 @@ create table DOCTOR(
 create table PACIENTE(
 	id_Paciente int(7) auto_increment,
     id_Doctor_Paciente int(7) not null,
-    nombre_Paciente varchar(30) not null,
+    nombre_Paciente varchar(100) not null,
     genero_Paciente varchar(10) not null,
     fechaNacimiento_Paciente datetime not null,
     telefono_Paciente varchar(10) not null,
-    correo_Usuario_Paciente varchar(20) not null,
+    correo_Usuario_Paciente varchar(60) not null,
     ruta_Paciente varchar(20) not null,
     temp_Paciente varchar(30) not null,
     
@@ -64,7 +64,7 @@ create table ESTADISTICA(
 -- Insertar Doctor
 drop procedure if exists insertar_Doctor;
 delimiter $$
-	create procedure insertar_Doctor(in nom varchar(30), in corr varchar(20), in ced varchar(9))
+	create procedure insertar_Doctor(in nom varchar(100), in corr varchar(60), in ced varchar(9))
     begin
 		insert into Doctor(nombre_Doctor, correo_Usuario_Doctor, cedula_Doctor) values (nom, corr, ced);
     end $$
@@ -73,7 +73,7 @@ delimiter ;
 -- Insertar Paciente
 drop procedure if exists insertar_Paciente;
 delimiter $$
-	create procedure insertar_Paciente(in id_Usr int(7), in nom varchar(30), in gen varchar(10), in fec datetime, in tel varchar(10), in corr varchar(20), in rut varchar(20), in tem varchar(30))
+	create procedure insertar_Paciente(in id_Usr int(7), in nom varchar(100), in gen varchar(10), in fec datetime, in tel varchar(10), in corr varchar(60), in rut varchar(20), in tem varchar(30))
     begin
 		insert into PACIENTE(id_Doctor_Paciente, nombre_Paciente, genero_Paciente, fechaNacimiento_Paciente, telefono_Paciente, correo_Usuario_Paciente, ruta_Paciente, temp_Paciente) 
         values (id_Usr, nom, gen, fec, tel, corr, rut, tem);
@@ -92,7 +92,7 @@ delimiter ;
 -- Buscar Sesion Doctor en la base de datos
 drop procedure if exists getSesionDoctor;
 delimiter $$
-	create procedure getSesionDoctor(in correo varchar(20), in pass varchar(30))
+	create procedure getSesionDoctor(in correo varchar(60), in pass varchar(30))
     begin
 		select Doctor.nombre_Doctor from Usuario join Doctor 
         on Usuario.correo_Usuario = Doctor.correo_Usuario_Doctor
@@ -103,7 +103,7 @@ delimiter ;
 -- Buscar Sesion Paciente en la base de datos
 drop procedure if exists getSesionPaciente;
 delimiter $$
-	create procedure getSesionPaciente(in correo varchar(20), in pass varchar(30))
+	create procedure getSesionPaciente(in correo varchar(60), in pass varchar(30))
     begin
 		select Paciente.nombre_Paciente from Usuario join Paciente
         on Usuario.correo_Usuario = Paciente.correo_Usuario_Paciente
@@ -155,7 +155,7 @@ delimiter ;
 
 
 # # # # # # # # # # # INSERCIONES DE EJEMPLO # # # # # # # # # # # # #
-call insertar_Doctor('Enoc Martínez', 'enoc.9714@gmail.com', 'CED213');
+call insertar_Doctor('Enoc Martínez', 'actec_147@hotmail.com', 'CED213');
 call insertar_Paciente(1, 'Miguel Ángel San Martín', 'Masculino', '2008-07-14', '8334375144', 'sanma@algo.com', 'hombre.png', '23MS877');
 -- select DOCTOR.nombre_Doctor, PACIENTE.nombre_Paciente from PACIENTE join DOCTOR on PACIENTE.id_Doctor_Paciente = DOCTOR.id_Doctor;
 select * from Usuario;

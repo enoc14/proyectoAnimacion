@@ -41,6 +41,7 @@ if(window.name == "ver-pacientes"){
                 <h2 class="no-data">Por el momento no tienes Pacientes registrados</h2>
                 <button class="btn btn-success" onclick="">Ir a registrar Pacientes</button>
             `;
+            divPacientes.append(plantilla);
         }
     }
     getDatosPacientes();

@@ -226,8 +226,7 @@ if(window.name == 'registrar-paciente'){
 				}
 				break;
 			case 4:
-				console.log(telefonoRegistroPaciente.value.length);
-				if (!(telefonoRegistroPaciente.value.length == 10)) {
+				if (!(telefonoRegistroPaciente.value.length == 9)) {
 					formGroupTelefonoRegistroPaciente.classList.remove("has-success");
 					formGroupTelefonoRegistroPaciente.classList.add("has-error");
 					msgErrorTelefonoRegistroPaciente.style.display = "block";
@@ -246,8 +245,9 @@ if(window.name == 'registrar-paciente'){
 	}
 
 	btnRegistrarPaciente.addEventListener('click', function() {
-		let name = nombreRegistroPaciente.value.replace(/ /g, "+");
-		let date = fechaRegistroPaciente.value.replace(/\//g, "-");
+		let name = nombreRegistroPaciente.value.replace(/ /g, "%20");
+		let dates = fechaRegistroPaciente.value.split("/");
+		let date = dates[2] + "-" + dates[1] + "-" + dates[0];
 		var data = {
 			'nombre': name,
 			'fecha': date,
@@ -268,17 +268,19 @@ if(window.name == 'registrar-paciente'){
 				liga += "&";
 			i++;
 		}
+
+		console.log(liga);
 		
 		var ajax = new XMLHttpRequest();
 		ajax.onreadystatechange = function(){
 			if (this.readyState == 4 && this.status == 200) {
-
+				console.log(JSON.stringify(ajax.responseText));
 				if (ajax.responseText) {
 					var paciente = JSON.parse(ajax.responseText);
 
 					if(!paciente.insertado){
 						alertaw.fadeIn(2000);
-						break;
+						return;
 					} else if (paciente.enviado){
 						clearInputs();
 						alerta.fadeIn(2000);

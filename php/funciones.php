@@ -30,12 +30,13 @@
         return $info;
     }
 
-    function insertarPaciente($nombre, $correo, $fecha, $telefono, $genero){
-        include_once "../mysqli_connect.php";
+    function insertarPaciente($nombre, $correo, $fecha, $telefono, $genero, $doctor){
+        include_once "../../mysqli_connect.php";
 
-        $pass = $nombre[0]+$correo[4]+substr($telefono, 4, 8)+$genero[0]+$fecha[3];
-        $query = "call insertar_Paciente((select doctor.id_Doctor from doctor where doctor.correo_Usuario_Doctor = $doctor), $nombre, $genero, $fecha, $telefono, $correo, 'hombre.png', $pass)";
-        $resultado = mysqli_query($conexion, $query);
+        $ruta = ($genero == 'Masculino') ? 'hombre.png' : 'chica.png';
+        $pass = $nombre[0].$correo[4].substr($telefono, 4, 8).$genero[0].$fecha[3];
+        $query = "call insertar_Paciente((select doctor.id_Doctor from doctor where doctor.correo_Usuario_Doctor = '$doctor'), '$nombre', '$genero', '$fecha', '$telefono', '$correo', '$ruta', '$pass')";
+        $resultado = mysqli_query($conexion, $query) or die (mysqli_error($conexion));
         $data = array();
 
         if($resultado){

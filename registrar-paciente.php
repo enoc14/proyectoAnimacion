@@ -1,8 +1,17 @@
 <?php
-include('header-doctor.php');
+    session_start();
+    if($_SESSION['tipo'] != 'doctor')
+        header("Location:index.php");  
+
+    $title = "Registrar Paciente";
+    $nameDoctor = $_SESSION['nombre'];
+    $tipoDoctor = $_SESSION['tipo'];
+    $emailDoctor = $_SESSION['correo'];
+
+    include('header-doctor.php');
 ?>
 <script>
-window.name = "registrar-paciente";
+    window.name = "registrar-paciente";
 </script>
 
 <!-- Sub Page Content
@@ -92,7 +101,6 @@ window.name = "registrar-paciente";
         </div>
     </div>
 </div>
-<!--<div id="carga" class="loader" style="display: none"></div>-->
 <?php
 include('footer.php');
 ?>

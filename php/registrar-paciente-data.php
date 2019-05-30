@@ -1,5 +1,8 @@
 <?php
-// Agregar el correo y nombre del doctor desde SESSION
+session_start();
+$name_Doctor = $_SESSION['nombre'];
+$email_Doctor = $_SESSION['correo'];
+require 'funciones.php';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $nombre = trim($_POST['nombre']);
@@ -9,9 +12,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $genero = trim($_POST['genero']);
     $datos = array();
 
-    $data = insertarPaciente($nombre, $correo, $fecha, $telefono, $genero);
+    $data = insertarPaciente($nombre, $correo, $fecha, $telefono, $genero, $email_Doctor);
 
-    if($data['sucess']){
+    if($data['success']){
         set_time_limit(300);
         require '../correo/php/class/emailForm.class.php';
         $pass = $data['pass'];
@@ -30,9 +33,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         else
             $datos['enviado'] = "Error, ponte en contacto con el administrador para enviar la contraseña";
 
-        echo json_encode($datos);
     } else
         $datos['insertado'] = false;
+
+    echo json_encode($datos);
 }
 
 ?>

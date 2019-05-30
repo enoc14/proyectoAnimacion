@@ -128,23 +128,23 @@
 						<ul class="nav navbar-nav">
 							
 							<li class="<?php if($url == "index.php") echo "active"; ?>">
-								<a href="index.php"><i class="fa fa-plus"></i>Inicio</a>
+								<a href="index.php"><i class="fa fa-home"></i>Inicio</a>
 							</li>
 							
 							<li class="<?php if($url == "nosotros.php") echo "active"; ?>">
-								<a href="nosotros.php" ><i class="fa fa-plus"></i>Nosotros</a>
+								<a href="nosotros.php" ><i class="fa fa-group"></i>Nosotros</a>
 							</li>
 						  
 							<li class="<?php if($url == "justificacion.php") echo "active"; ?>">
-								<a href="justificacion.php"><i class="fa fa-plus"></i>Justificación</a>
+								<a href="justificacion.php"><i class="fa fa-bars"></i>Justificación</a>
 							</li>
 						  
 							<li class="<?php if($url == "contacto.php") echo "active"; ?>">
-								<a href="contacto.php"><i class="fa fa-plus"></i>Contacto</a>
+								<a href="contacto.php"><i class="fa fa-envelope"></i>Contacto</a>
 							</li>
 						  	
 						  	<li class="last <?php if($url == "registro.php") echo "active"; ?>">
-								<a href="registro.php"><i class="fa fa-plus"></i>Registro</a>
+								<a href="registro.php"><i class="fa fa-sign-in"></i>Iniciar Sesión</a>
 							</li>
 						</ul>
 						
