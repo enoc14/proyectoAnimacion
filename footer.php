@@ -80,6 +80,7 @@
 	<script src="js/jquery.easypiechart.min.js"></script>
 	<script src="js/scripts.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/peticiones.js"></script>
     
 	<!-- This page
 	============================================= -->

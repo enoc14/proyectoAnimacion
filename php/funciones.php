@@ -29,4 +29,22 @@
 
         return $info;
     }
+
+    function insertarPaciente($nombre, $correo, $fecha, $telefono, $genero){
+        include_once "../mysqli_connect.php";
+
+        $pass = $nombre[0]+$correo[4]+substr($telefono, 4, 8)+$genero[0]+$fecha[3];
+        $query = "call insertar_Paciente((select doctor.id_Doctor from doctor where doctor.correo_Usuario_Doctor = $doctor), $nombre, $genero, $fecha, $telefono, $correo, 'hombre.png', $pass)";
+        $resultado = mysqli_query($conexion, $query);
+        $data = array();
+
+        if($resultado){
+            $data['success'] = true;
+            $data['pass'] = $pass;
+        } else
+            $data['success'] = false;
+
+        mysqli_close($conexion);
+        return $data;
+    }
 ?>

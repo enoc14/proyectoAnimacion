@@ -11,7 +11,7 @@
     $destinatario = "shanock.charras@gmail.com";
     $body  = "{$name} mandó un mensaje: <br>";
     $body .= "<b>{$titulo}.</b><br>";
-    $body .= "${msj}<br>";
+    $body .= "{$msj}<br>";
     $body .= "<b>Correo:</b> {$correo}";
     
     $sendEmail = new emailForm();

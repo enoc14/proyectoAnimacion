@@ -1,4 +1,7 @@
 <?php include "header.php" ?>
+<script>
+    window.name = "contacto";   
+</script>
 
 <!-- Sub Page Banner
 	=============================================  perros-->
