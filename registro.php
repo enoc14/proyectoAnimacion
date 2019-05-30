@@ -45,6 +45,20 @@
 									<input type="password" name="pass_Sesion" class="form-control" placeholder="Contraseña">
 								</div>
 
+								<div class="input-group col-md-6" style="margin-bottom: 10px">
+									<span class="input-group-addon no-padding">
+										<input type="radio" name="tipo_Sesion" value="paciente">
+									</span>
+									<input type="text" value="Soy Paciente" class="form-control" disabled>
+								</div>
+
+								<div class="input-group col-md-6" style="margin-bottom: 10px">
+									<span class="input-group-addon no-padding">
+										<input type="radio" name="tipo_Sesion" value="doctor">
+									</span>
+									<input type="text" value="Soy Doctor" class="form-control" disabled>
+								</div>
+
 							</div>
 								<input type="submit" class="btn btn-default btn-block" value="Entrar" onClick="">
 						</form>

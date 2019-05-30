@@ -8,3 +8,14 @@
 .margin-top-50{
     margin-top: 50px;
 }
+
+.no-padding {
+    padding: 0px 0px !important;
+}
+
+.responsive-img {
+    width: 100%;
+    max-width: 234px;
+    height: auto;
+    max-height: 90%;
+}

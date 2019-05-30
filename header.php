@@ -63,6 +63,7 @@
 	<!-- Bootstrap
 	============================================= -->
     <link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" id="color" href="css/main.css">
 
     
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -84,10 +85,6 @@
 	
 	</head>
     <body class="fixed-header">
-
-    	<script type="text/javascript">
-    		var pageName = window.location.pathname.split("/")[2];
-    	</script>
     
 		<!-- Document Wrapper
 		============================================= -->

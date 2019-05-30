@@ -1,34 +1,32 @@
 <?php
+    function getInfoUsuario($correo, $pass, $tipo){
+        include_once "../mysqli_connect.php";
 
-    function getInfoUsuario($correo, $pass){
-        include_once "../../mysqli_connect.php";
+        if($tipo == 'paciente')
+            $query = "CALL getSesionPaciente('$correo','$pass')";
+        elseif ($tipo == 'doctor')
+            $query = "CALL getSesionDoctor('$correo','$pass')";
 
-        $query = "CALL getSesionDoctor('$correo','$pass')";
         $resultado = mysqli_query($conexion, $query);
-        $error = true;
+        $errorConsulta = true;
         $info = array();
-        $info["error2"] = false;
+        $info["errorDB"] = false;
         
         if($resultado){
             $num = mysqli_num_rows($resultado);
             if($num > 0){
-                $error = false;
-                $info["error"] = true;
-                $info = mysqli_fetch_assoc($resultado);
+                $errorConsulta = false;
+                $info["errorConsulta"] = $errorConsulta;
+                $info["data"] = mysqli_fetch_assoc($resultado);
             } else {
-                $info["error"] = $error;
+                $info["errorConsulta"] = $errorConsulta;
             }
         } else {
-            $info["error2"] = true;
+            $info["errorDB"] = true;
         }
         
         mysqli_close($conexion);
 
         return $info;
     }
-
-    function imprime($string){
-        return $string;
-    }
-
 ?>

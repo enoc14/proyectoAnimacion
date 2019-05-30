@@ -1,6 +1,7 @@
 <?php
 include('header-doctor.php');
 ?>
+<script>window.name = "registrar-paciente";</script>
 <!-- Sub Page Content
 	============================================= -->
 	<div id="sub-page-content" class="clearfix">
