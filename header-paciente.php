@@ -16,7 +16,7 @@
 
     <link rel="icon" type="image/png" href="images/favicon.png">
 
-    <title>ESQUITE</title>
+    <title><?php echo $title?></title>
 
     <meta name="description" content="">
 
@@ -145,8 +145,8 @@
                                 <a href="actividades-paciente.php"><i class="fa fa-puzzle-piece"></i>Actividades</a>
                             </li>
 
-                            <li class="<?php if($url == "perfil.php") echo "active"; ?>">
-                                <a href="justificacion.php"><i class="fa fa-user"></i>Perfil</a>
+                            <li class="<?php if($url == "perfil-paciente.php") echo "active"; ?>">
+                                <a href="perfil-paciente.php"><i class="fa fa-user"></i>Perfil</a>
                             </li>
                         </ul>
 
