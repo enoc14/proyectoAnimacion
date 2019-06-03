@@ -1,5 +1,5 @@
 <?php include "header.php" ?>
-
+<script>window.name = "index";</script>
 <div id="content-index">
 
 

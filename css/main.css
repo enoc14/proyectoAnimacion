@@ -23,3 +23,7 @@
 .oculta {
     display: none;
 }
+
+.bloque {
+    display: block;
+}

@@ -81,6 +81,10 @@
 	<script src="js/scripts.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/peticiones.js"></script>
+
+	<!-- Juegos SCRIPTS -->
+	<script src="juegos/js/pixi.min.js"></script>
+	<script src="juegos/js/main.js"></script>
     
 	<!-- This page
 	============================================= -->

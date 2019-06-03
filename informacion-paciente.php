@@ -1,5 +1,7 @@
 <?php include "header-paciente.php" ?>
-
+<script>
+    window.name = "informacion-paciente";   
+</script>
 <!-- Sub Page Content
 			============================================= -->
 <div id="sub-page-content" class="clearfix margin-top-50">
