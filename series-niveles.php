@@ -1,4 +1,5 @@
 <?php 
+$title = "Series";
 include('header-paciente.php');
 ?>
 

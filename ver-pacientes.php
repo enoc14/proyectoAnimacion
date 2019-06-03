@@ -5,8 +5,6 @@
 
     $title = "Ver Pacientes";
     $nameDoctor = $_SESSION['nombre'];
-    //$tipoDoctor = $_SESSION['tipo'];
-    //$emailDoctor = $_SESSION['correo'];
 
     include('header-doctor.php');
 ?>

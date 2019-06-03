@@ -84,7 +84,8 @@
 
 	<!-- Juegos SCRIPTS -->
 	<script src="juegos/js/pixi.min.js"></script>
-	<script src="juegos/js/main.js"></script>
+	<script src="juegos/js/nivel1.js"></script>
+	<script src="juegos/js/nivel2.js"></script>
     
 	<!-- This page
 	============================================= -->

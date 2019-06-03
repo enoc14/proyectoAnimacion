@@ -2,7 +2,18 @@ if(window.name == 'series_nivel1'){
 
 	// Ajax Para puntaje
 	function guardarPuntaje(datPuntaje){
-		
+		var ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+				console.log(JSON.stringify(this.responseText));
+				var res = JSON.parse(this.responseText);
+				if(res.success){
+					location.href = "series-niveles.php";
+				}
+            }
+        };
+        ajax.open("GET", "php/insertar-estadisticas.php/?puntaje="+datPuntaje, true);
+	    ajax.send();
 	}
 
 	// Toast
@@ -363,7 +374,7 @@ if(window.name == 'series_nivel1'){
 
 			swal(":)", "Haz Ganao", "success")
 				.then((value) => {
-					console.log(txt_ganar + " - " + puntaje);
+					guardarPuntaje(puntaje);
 				});
 		}
 	}
