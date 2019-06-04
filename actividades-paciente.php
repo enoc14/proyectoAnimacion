@@ -30,7 +30,7 @@ include('header-paciente.php');
                         <div class="gallery-item">
                             <div class="gallery-item-thumb">
                                 <span class="overlay"></span>
-                                <img src="images/gallery-img1.jpg" alt="">
+                                <img src="images/juegoSeries2.png" alt="">
                             </div>
                             <div class="gallery-item-info">
                                 <p><a href="series-niveles.php">SERIES DE COLORES</a><span>*Juego Nuevo</span></p>
@@ -43,7 +43,7 @@ include('header-paciente.php');
                         <div class="gallery-item">
                             <div class="gallery-item-thumb">
                                 <span class="overlay"></span>
-                                <img src="images/gallery-img1.jpg" alt="">
+                                <img src="images/coming-soon.jpg" alt="">
                             </div>
                             <div class="gallery-item-info">
                                 <p><a href="#.">OPERACIONES ARITMÉTICAS</a><span>Proximamente...</span></p>
@@ -56,7 +56,7 @@ include('header-paciente.php');
                         <div class="gallery-item">
                             <div class="gallery-item-thumb">
                                 <span class="overlay"></span>
-                                <img src="images/gallery-img1.jpg" alt="">
+                                <img src="images/coming-soon.jpg" alt="">
                             </div>
                             <div class="gallery-item-info">
                                 <p><a href="#.">RELACION IMAGEN - SONIDO</a><span>Proximamente...</span></p>
