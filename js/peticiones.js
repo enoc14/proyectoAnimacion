@@ -104,31 +104,38 @@ if(window.name == "perfil-paciente"){
     function mostrarEstadisticas(puntajes) {
         var gx = [], gy = [];
         var data = JSON.parse(puntajes.responseText);
-        for (const key in data) {
-            gx.push(data[key].id_Estadistica);
-            gy.push(data[key].puntaje_Estadistica);
-        }
-        var trace1 = {
-            x: gx,
-            y: gy,
-            mode: 'markers+lines',
-            name: 'Puntuaciones'
-          };
-        var layout = {
-            title: 'Juego de Series',
-            xaxis: {
-              title: 'Partida',
-              showline: true,
-              showgrid: true,
-              zeroline: false
-            },
-            yaxis: {
-              title: 'Puntuacion',
-              showline: true
+        if(Object.keys(data).length){
+            for (const key in data) {
+                gx.push(data[key].id_Estadistica);
+                gy.push(data[key].puntaje_Estadistica);
             }
-          };
-        var puntuacion = [trace1];
-        Plotly.newPlot('divEstadisticas', puntuacion, layout);
+            var trace1 = {
+                x: gx,
+                y: gy,
+                mode: 'markers+lines',
+                name: 'Puntuaciones'
+            };
+            var layout = {
+                title: 'Juego de Series',
+                xaxis: {
+                title: 'Partida',
+                showline: true,
+                showgrid: true,
+                zeroline: false
+                },
+                yaxis: {
+                title: 'Puntuacion',
+                showline: true
+                }
+            };
+            var puntuacion = [trace1];
+            Plotly.newPlot('divEstadisticas', puntuacion, layout);
+        } else {
+            plantilla = `
+                <h2>Cuando juegues alguna partida tus estadísticas se mostrarán aquí</h2>
+            `;
+            divEstadisticas.append(plantilla);
+        }
     }
 
     getDatosPacientes();
