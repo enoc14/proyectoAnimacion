@@ -1,5 +1,16 @@
-<?php include "header-paciente.php" ?>
-
+<?php
+session_start();
+if($_SESSION['tipo'] != 'paciente')
+    header("Location:index.php");  
+$namePaciente = $_SESSION['nombre'];
+//$tipoPaciente = $_SESSION['tipo'];
+//$emailPaciente = $_SESSION['correo'];
+$title = "Actividades Paciente";
+include('header-paciente.php');
+?>
+<script>
+    window.name = "actividades-paciente"
+</script>
 <!-- Sub Page Content
 			============================================= -->
 <div id="sub-page-content" class="clearfix margin-top-50">

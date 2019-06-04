@@ -1,4 +1,13 @@
-<?php include "header-paciente.php" ?>
+<?php
+session_start();
+if($_SESSION['tipo'] != 'paciente')
+    header("Location:index.php");  
+$namePaciente = $_SESSION['nombre'];
+//$tipoPaciente = $_SESSION['tipo'];
+//$emailPaciente = $_SESSION['correo'];
+$title = "Informacion Paciente";
+include('header-paciente.php');
+?>
 <script>
     window.name = "informacion-paciente";   
 </script>

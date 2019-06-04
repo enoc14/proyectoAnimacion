@@ -7,12 +7,7 @@
         if($resultado){
             $num = mysqli_num_rows($resultado);
             if($num > 0){
-                $cont = 0;
-                while($row = mysqli_fetch_assoc($resultado)){
-                    $data = "data".$cont;
-                    $datos[$data] = $row;
-                    $cont++;
-                }
+                $datos = mysqli_fetch_assoc($resultado);//Convertir la consulta en un arreglo clave valor
             }
         }
         mysqli_close($conexion);

@@ -16,7 +16,7 @@
 
     <link rel="icon" type="image/png" href="images/favicon.png">
 
-    <title><?php echo $title?></title>
+    <title><?php echo $title;?></title>
 
     <meta name="description" content="">
 
@@ -128,7 +128,7 @@
 
                         <a class="navbar-brand" href="index.html"><img src="images/logo-green.png" alt="" title=""></a>
 
-                        <p class="text-center" style="margin-bottom: 0px;">Hola <b>Paciente 1</b></p>
+                        <p class="text-center" style="margin-bottom: 0px;">Hola <b><?php echo $namePaciente;?></b></p>
 
                     </div>
 
