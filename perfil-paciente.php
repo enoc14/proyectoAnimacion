@@ -14,13 +14,17 @@
 <div id="sub-page-content" class="clearfix margin-top-30">
     <div class="container" style="padding-top: 25px;">
         <h2 class="light bordered main-title">Editar <span>Perfil</span></h2>
-        <div class="row" id="divPerfil">
+        <div class="row" id="divPerfil"></div>
     </div>
 </div>
-<div id="sub-page-content" class="clearfix margin-top-30">
+<div id="sub-page-content" class="clearfix">
     <div class="container" style="padding-top: 25px;">
         <h2 class="light bordered main-title">Tus <span>Estadisticas</span></h2>
-        <div class="row" id="divEstadisticas">
+        <div class="row">
+            <div class="col-sm-7 col-sm-offset-2" id="divEstadisticas" style="height: 400px; margin-top: 10px;">
+
+            </div>
+        </div>
     </div>
 </div>
 <?php include "footer.php" ?>

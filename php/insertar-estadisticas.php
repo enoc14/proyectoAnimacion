@@ -1,7 +1,6 @@
 <?php
     session_start();
-    //$paciente = $_SESSION['correo'];
-    $paciente = "miguel_spy@hotmail.com";
+    $paciente = $_SESSION['correo'];
 
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
 

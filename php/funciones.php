@@ -1,6 +1,6 @@
 <?php
     function getInfoUsuario($correo, $pass, $tipo){
-        include_once "../../mysqli_connect.php";
+        include_once "../mysqli_connect.php";
 
         if($tipo == 'paciente')
             $query = "CALL getSesionPaciente('$correo','$pass')";

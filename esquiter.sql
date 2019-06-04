@@ -129,6 +129,15 @@ delimiter ;
             from Paciente;
         end $$
     delimiter ;
+    
+-- Obtener la información de los pacientes
+drop procedure if exists getEstadisticaPaciente;
+delimiter $$
+	create procedure getEstadisticaPaciente(in correo varchar(60))
+	begin
+		select Estadistica.id_Estadistica, Estadistica.puntaje_Estadistica from Estadistica where Estadistica.id_Paciente_Estadistica = (select Paciente.id_Paciente from Paciente where Paciente.correo_Usuario_Paciente = correo);
+	end $$
+delimiter ;
 
 
 # # # # # # # # # # # CREACION DE TRIGGERS # # # # # # # # # # # # #
@@ -163,4 +172,5 @@ select * from Usuario;
 call getSesionDoctor('enoc.9714@gmail.com','enoc.9714@gmail.com');
 call getSesionPaciente('sanma@algo.com','23MS877');
 call insertar_Juego('Series de Colores');
+call getEstadisticaPaciente('miguel_spy@hotmail.com');
 select * from Estadistica

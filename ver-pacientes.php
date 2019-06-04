@@ -4,12 +4,6 @@
         header("Location:index.php");  
     $title = "Ver Pacientes";
     $nameDoctor = $_SESSION['nombre'];
-<<<<<<< HEAD
-    //$tipoDoctor = $_SESSION['tipo'];
-    //$emailDoctor = $_SESSION['correo'];
-=======
-
->>>>>>> 006dcde72bbbdc9eccc8c254af847f99fe3ad814
     include('header-doctor.php');
 ?>
 <script>

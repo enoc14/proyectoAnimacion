@@ -84,7 +84,7 @@
 
     <script src="js/modernizr-2.6.2.min.js"></script>
     <script src="js/sweetalert.min.js"></script>
-
+    <script src="js/ploty.min.js"></script>
 
 </head>
 
@@ -147,6 +147,10 @@
 
                             <li class="<?php if($url == "perfil-paciente.php") echo "active"; ?>">
                                 <a href="perfil-paciente.php"><i class="fa fa-user"></i>Perfil</a>
+                            </li>
+
+                            <li>
+                                <a href="logout.php"><i class="fa fa-sign-out"></i>Cerrar Sesión</a>
                             </li>
                         </ul>
 

@@ -49,6 +49,7 @@ if(window.name == "ver-pacientes"){
 if(window.name == "perfil-paciente"){
     
     var divPerfil = $('#divPerfil');
+    var divEstadisticas = $('#divEstadisticas');
 
     function getDatosPacientes(){
         var ajax = new XMLHttpRequest();
@@ -62,9 +63,7 @@ if(window.name == "perfil-paciente"){
     }
 
     function mostrarDatos(data){
-        console.log(JSON.stringify(data.responseText));
         var datos = JSON.parse(data.responseText);
-        console.log(datos);
         var edad = new Date().getFullYear() - parseInt(datos.fecha_Paciente);
         var plantilla = `
         <div class="col-md-8 col-md-offset-3 padding-bottom-60 clearfix">
@@ -83,14 +82,55 @@ if(window.name == "perfil-paciente"){
                 </div>
             </div>
         </div>
-        </div>
         <div class="row">
             <div class="col-md-8 col-md-offset-5">
             <a class="btn btn-success" href="#">Guardar</a>
         </div>
-        </div>
         `;
         divPerfil.append(plantilla);
     }
+
+    function getEstadisticas() {
+        var ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                mostrarEstadisticas(this);
+            }
+        };
+        ajax.open("GET","php/estadisticas-paciente-data.php",true);
+	    ajax.send();
+    }
+
+    function mostrarEstadisticas(puntajes) {
+        var gx = [], gy = [];
+        var data = JSON.parse(puntajes.responseText);
+        for (const key in data) {
+            gx.push(data[key].id_Estadistica);
+            gy.push(data[key].puntaje_Estadistica);
+        }
+        var trace1 = {
+            x: gx,
+            y: gy,
+            mode: 'markers+lines',
+            name: 'Puntuaciones'
+          };
+        var layout = {
+            title: 'Juego de Series',
+            xaxis: {
+              title: 'Partida',
+              showline: true,
+              showgrid: true,
+              zeroline: false
+            },
+            yaxis: {
+              title: 'Puntuacion',
+              showline: true
+            }
+          };
+        var puntuacion = [trace1];
+        Plotly.newPlot('divEstadisticas', puntuacion, layout);
+    }
+
     getDatosPacientes();
+    getEstadisticas();
 }

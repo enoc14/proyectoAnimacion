@@ -1,4 +1,8 @@
 <?php 
+session_start();
+if($_SESSION['tipo'] != 'paciente')
+    header("Location:index.php");
+$namePaciente = $_SESSION['nombre'];
 $title = "Nivel 2";
 include('header-paciente.php');
 ?>

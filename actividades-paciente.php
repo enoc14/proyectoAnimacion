@@ -33,7 +33,7 @@ include('header-paciente.php');
                                 <img src="images/gallery-img1.jpg" alt="">
                             </div>
                             <div class="gallery-item-info">
-                                <p><a href="#.">SERIES DE COLORES</a><span>Pediatric clinic</span></p>
+                                <p><a href="series-niveles.php">SERIES DE COLORES</a><span>*Juego Nuevo</span></p>
                             </div>
                         </div>
 
@@ -46,7 +46,7 @@ include('header-paciente.php');
                                 <img src="images/gallery-img1.jpg" alt="">
                             </div>
                             <div class="gallery-item-info">
-                                <p><a href="#.">OPERACIONES ARITMÉTICAS</a><span>Pediatric clinic</span></p>
+                                <p><a href="#.">OPERACIONES ARITMÉTICAS</a><span>Proximamente...</span></p>
                             </div>
                         </div>
 
@@ -59,7 +59,7 @@ include('header-paciente.php');
                                 <img src="images/gallery-img1.jpg" alt="">
                             </div>
                             <div class="gallery-item-info">
-                                <p><a href="#.">RELACION IMAGEN - SONIDO</a><span>Pediatric clinic</span></p>
+                                <p><a href="#.">RELACION IMAGEN - SONIDO</a><span>Proximamente...</span></p>
                             </div>
                         </div>
 
