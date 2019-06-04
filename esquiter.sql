@@ -162,5 +162,5 @@ select * from Usuario;
 
 call getSesionDoctor('enoc.9714@gmail.com','enoc.9714@gmail.com');
 call getSesionPaciente('sanma@algo.com','23MS877');
-
-select * from users;
+call insertar_Juego('Series de Colores');
+select * from Estadistica
