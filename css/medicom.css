@@ -1683,7 +1683,26 @@ TESTIMONIALS 3
 SUB PAGE
 
 -------------------------------------------------------------------*/
-
+.sub-page-banner-inicioSesion {
+	background:url(../images/sub-page-banner.jpg) no-repeat center;
+	background-attachment:fixed;
+	height:316px;
+	position:relative;
+}
+.sub-page-banner-jus {
+	background:url(../images/nasca.jpg) no-repeat center;
+	background-position: 50% 90%;
+	background-size: 1600px 1650px;
+	background-attachment:fixed;
+	height:316px;
+	position:relative;
+}
+.sub-page-banner-contact {
+	background:url(../images/cont.jpg) no-repeat center;
+	background-attachment:fixed;
+	height:316px;
+	position:relative;
+}
 .sub-page-banner {
 	background:url(../images/sub-page-banner.jpg) no-repeat center;
 	background-attachment:fixed;

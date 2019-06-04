@@ -4,8 +4,8 @@
 </script>
 
 <!-- Sub Page Banner
-	=============================================  perros-->
-	<section class="sub-page-banner text-center" data-stellar-background-ratio="0.3">
+	=============================================  -->
+	<section class="sub-page-banner-contact" data-stellar-background-ratio="0.3">
 
 		<div class="overlay"></div>
 

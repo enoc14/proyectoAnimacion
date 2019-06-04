@@ -14,7 +14,7 @@
                 <!-- Fade
 					============================================= -->
                 <li data-transition="fade" data-slotamount="10" data-thumb="">
-                    <img src="images/heart-specialist.jpg" alt="image" />
+                    <img src="images/opcion3.jpg" alt="image" />
                     <div class="caption sft" data-x="0" data-y="180" data-speed="3000" data-start="1300"
                         data-easing="easeOutBack">
                         <img src="images/heart-icon.png" alt="">
@@ -138,16 +138,24 @@
 
                 <div class="big-font">
 
-                    <div class="media pull-right"><img src="images/cancer-canter-img2.jpg" class="img-rounded" alt=""
-                            title=""></div>
+                    <div class="row">
 
-                    <p>Todas las situaciones a las que nos enfrentamos en la vida diaria requieren diferentes demandas
-                        cognitivas. Se sabe que un gran número de pacientes esquizofrénicos presenta deterioro en las
-                        habilidades cognitivas, necesarias para el desenvolvimiento exitoso en las actividades que se
-                        desarrollan cotidianamente.</p>
-                    <p>La estimulación cognitiva, engloba todas aquellas actividades que se dirigen a mejorar de la
-                        memoria, lenguaje, atención, concentración, razonamiento, percepción, abstracción, operaciones
-                        aritméticas y praxias, por medio de programas de estimulación.</p>
+                        <div class="col-sm-12 col-md-4">
+                            <div class="media pull-right">
+                                <img src="images/cognicion.jpg" class="img-rounded" alt="" title="">
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-8">
+                            <p>Todas las situaciones a las que nos enfrentamos en la vida diaria requieren diferentes demandas
+                            cognitivas. Se sabe que un gran número de pacientes esquizofrénicos presenta deterioro en las
+                            habilidades cognitivas, necesarias para el desenvolvimiento exitoso en las actividades que se
+                            desarrollan cotidianamente.</p>
+                            <p>La estimulación cognitiva, engloba todas aquellas actividades que se dirigen a mejorar de la
+                            memoria, lenguaje, atención, concentración, razonamiento, percepción, abstracción, operaciones
+                            aritméticas y praxias, por medio de programas de estimulación.</p>
+                        </div>
+
+                    </div>
 
                     <div class="testimonials3 text-center" style="margin-top: 70px">
 
