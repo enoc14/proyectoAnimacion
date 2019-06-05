@@ -1,6 +1,14 @@
 if(window.name == "ver-pacientes"){
     
     var divPacientes = $('#divPacientes');
+    var divModal = document.getElementById('myModal');
+    var span;
+    
+    window.onclick = function(event) {
+        if (event.target == divModal) {
+            divModal.style.display = 'none';
+        }
+    }
 
     function getDatosPacientes(){
         var ajax = new XMLHttpRequest();
@@ -31,6 +39,7 @@ if(window.name == "ver-pacientes"){
                             <p><label class="heading">Genero</label><label class="detail">${datos[i].genero_Paciente}</label></p>
                             <p><label class="heading">Teléfono</label><label class="detail">${datos[i].telefono_Paciente}</label></p>
                             <p><label class="heading">Correo</label><label class="detail text-justify">${datos[i].correo_Usuario_Paciente}</label></p>
+                            <p><label class="heading">Estadísticas</label><label class="detail text-justify"><a class="point" onclick="getEstadisticasPaciente(${datos[i].id_Paciente})">Ver</a></label></p>
                         </div>
                     </div>
                 `;
@@ -45,7 +54,81 @@ if(window.name == "ver-pacientes"){
         }
     }
     getDatosPacientes();
+
+    function getEstadisticasPaciente (idButton) {
+        var ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                mostrarEstadisticasPaciente(this);
+            }
+        };
+        ajax.open("GET","php/modal-estadisticas.php?paciente="+idButton,true);
+	    ajax.send();
+    }
+
+    function mostrarEstadisticasPaciente(response) {
+        var juegos = JSON.parse(response.responseText);
+
+        if(Object.keys(juegos).length){
+            var series = 0;
+
+            for (const key in juegos) {
+                if(juegos[key].id_Juego_Estadistica == 1)
+                    series++;
+
+                // Añadir mas if's para juegos restantes
+            }
+
+            var data = [{
+                values: [series, 0, 0], //Porcentaje
+                labels: ['Series', 'Expresiones', 'Relación'], //Etiquetas
+                type: 'pie' //Tipo
+            }];
+            var layout = {
+                title: 'Número de veces jugadas',
+                height: 300,
+                width: 400
+            };
+            
+            var plantilla = `
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Estadísticas</h2>
+                    </div>
+                    <div class="modal-body">
+                        <center><div id="pastel"></div></center>
+                    </div>
+                </div>
+            `;
+            
+            divModal.innerHTML = plantilla;
+            pastel = document.getElementById('pastel');
+            Plotly.newPlot('pastel', data, layout);
+        } else {
+            var plantilla = `
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Estadísticas</h2>
+                    </div>
+                    <div class="modal-body">
+                        <center><h2>Este paciente aún no ha jugado</h2></center>
+                    </div>
+                </div>
+            `;
+            divModal.innerHTML = plantilla;
+        }
+        divModal.style.display = 'block';
+        span = document.getElementsByClassName("close")[0];
+        span.onclick = function() {
+            divModal.style.display = "none";
+        }
+    }
 }
+
 if(window.name == "perfil-paciente"){
     
     var divPerfil = $('#divPerfil');

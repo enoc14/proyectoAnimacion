@@ -16,6 +16,10 @@
         <h2 class="light bordered main-title">Lista de <span>Pacientes</span></h2>
         <div class="row" id="divPacientes">
         </div>
+        <div class="row" id="">
+            <div id="myModal" class="modal">
+            </div>
+        </div>
     </div>
 </div>
 <!--end sub-page-content-->

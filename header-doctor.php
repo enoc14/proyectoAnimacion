@@ -65,8 +65,10 @@
     <!-- Bootstrap
 	============================================= -->
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" id="color" href="css/main.css">
-    <link rel="stylesheet" id="color" href="css/toast.css">
+    <link rel="stylesheet"  href="css/main.css">
+    <link rel="stylesheet"  href="css/toast.css">
+    <link rel="stylesheet"  href="css/modal.css">
+    
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -84,6 +86,7 @@
 
     <script src="js/modernizr-2.6.2.min.js"></script>
     <script src="js/sweetalert.min.js"></script>
+    <script src="js/ploty.min.js"></script>
 
 
 </head>

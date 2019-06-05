@@ -139,6 +139,15 @@ delimiter $$
 	end $$
 delimiter ;
 
+-- Obtener la información de los pacientes
+drop procedure if exists getModalPaciente;
+delimiter $$
+	create procedure getModalPaciente(in paciente int(7))
+	begin
+		select Estadistica.id_Juego_Estadistica from Estadistica where Estadistica.id_Paciente_Estadistica = paciente;
+	end $$
+delimiter ;
+
 
 # # # # # # # # # # # CREACION DE TRIGGERS # # # # # # # # # # # # #
 
@@ -173,4 +182,5 @@ call getSesionDoctor('enoc.9714@gmail.com','enoc.9714@gmail.com');
 call getSesionPaciente('sanma@algo.com','23MS877');
 call insertar_Juego('Series de Colores');
 call getEstadisticaPaciente('miguel_spy@hotmail.com');
+call getModalPaciente(1);
 select * from Estadistica
