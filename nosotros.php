@@ -2,21 +2,12 @@
 
 <!-- Sub Page Banner
 			============================================= -->
-<section class="sub-page-banner text-center" data-stellar-background-ratio="0.3">
-
-    <div class="overlay"></div>
-
-    <div class="container">
-        <h1 class="entry-title">NOSOTROS</h1>
-    </div>
-
-</section>
 
 
 
 <!-- Sub Page Content
 			============================================= -->
-<div id="sub-page-content">
+<div id="sub-page-content" style="margin-top:30px;">
 
 
     <div class="container big-font">
@@ -28,8 +19,8 @@
 
             <div class="col-md-7">
 
-                <p>Somos una compañía de desarrollo de software sin fines de lucro que, que brinda a la sociedad un
-                    medio por el cual atender una necesidad que en este caso son las terapias. Contamos con un equipo
+                <p>Somos una compañía de desarrollo de software que brinda a la sociedad un
+                    medio por el cual atender la terapia ocupacional para la esquizofrenia. Contamos con un equipo
                     profesional que se dedicado con una vasta cantidad de ideas y dedicados.</p>
 
                 <p>Nuestra meta es ayudar a los pacientes a superar y tener una vida mejor, mejorando más su calidad de
@@ -46,15 +37,15 @@
                     <div class="owl-carousel image-carousel">
 
                         <div class="item">
-                            <img src="images/about-slider-img1.jpg" width="474" class="img-rounded" alt="" title="">
+                            <img src="images/teamwork001.jpg" width="474" class="img-rounded" alt="" title="">
                         </div>
 
                         <div class="item">
-                            <img src="images/about-slider-img2.jpg" width="474" class="img-rounded" alt="" title="">
+                            <img src="images/teamwork002.jpg" width="474" class="img-rounded" alt="" title="">
                         </div>
 
                         <div class="item">
-                            <img src="images/about-slider-img3.jpg" width="474" class="img-rounded" alt="" title="">
+                            <img src="images/teamwork003.jpg" width="474" class="img-rounded" alt="" title="">
                         </div>
 
                     </div>

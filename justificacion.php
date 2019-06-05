@@ -44,15 +44,15 @@
 								<div class="owl-carousel image-carousel">
 								  
 									<div class="item">
-									  <img src="images/patient-and-family-img1.jpg" width="437" class="img-rounded" alt="" title="">
+									  <img src="images/justi001.jpg" width="437" class="img-rounded" alt="" title="">
 									</div>
 									
 									<div class="item">
-									  <img src="images/patient-and-family-img3.jpg" width="437" class="img-rounded" alt="" title="">
+									  <img src="images/justi002.jpg" width="437" class="img-rounded" alt="" title="">
 									</div>
 									
 									<div class="item">
-									  <img src="images/patient-and-family-img2.jpg" width="437" class="img-rounded" alt="" title="">
+									  <img src="images/justi003.jpg" width="437" class="img-rounded" alt="" title="">
 									</div>
 									
 								</div>

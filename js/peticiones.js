@@ -144,30 +144,34 @@ if(window.name == "perfil-paciente"){
         ajax.open("GET","php/perfil-paciente-data.php",true);
 	    ajax.send();
     }
-
     function mostrarDatos(data){
         var datos = JSON.parse(data.responseText);
         var edad = new Date().getFullYear() - parseInt(datos.fecha_Paciente);
         var plantilla = `
-        <div class="col-md-8 col-md-offset-3 padding-bottom-60 clearfix">
+        <div class="col-md-12  padding-bottom-60 clearfix">
             <div class="doctors-img">
                 <img src="images/${datos.ruta_Paciente}" class="responsive-img" alt="Paciente">
             </div>
             <div class="doctors-detail">
-                <input type="text" placeholder="${datos.nombre_Paciente}" disabled/>
-                <input type="text" placeholder="${edad}" disabled/>
-                <input type="email" placeholder="${datos.correo_Usuario_Paciente}" disabled/>
-                <input type="number" placeholder="${datos.telefono_Paciente}"/>
-                <input type="password" placeholder="************" disabled/> <a href="#togglePass" class="btn btn-success" data-toggle="collapse">Cambiar Contraseña</a>
-                <div id="togglePass" class="collapse">
-                    <input type="password" placeholder="Ingresar Contraseña Nueva" />
-                    <input type="password" placeholder="Confirmar Contraseña Nueva" />
+                <input type="text" name="inputNombrePaciente" value="${datos.nombre_Paciente}" disabled/>
+                <input type="text" name="inputEdadPaciente" value="${edad}" disabled/>
+                <input type="email" name="inputCorreoPaciente" value="${datos.correo_Usuario_Paciente}" disabled/>
+                <input type="number" name="inputTelefonoPaciente" value="${datos.telefono_Paciente}"/>
+                <input type="password" name="inputPasswordPaciente" value="************" disabled/>
+                <input type="text" name="inputGeneroPaciente" value="${datos.genero_Paciente}" disabled/>
+                <div>
+                    <a href="#togglePass" class="btn btn-success" data-toggle="collapse">Cambiar Contraseña</a>
+                    <div id="togglePass" class="collapse">
+                        <input type="password" name="inputPasswordPaciente1" placeholder="Ingresar Contraseña Nueva" required/>
+                        <input type="password" name="inputPasswordPaciente2" placeholder="Confirmar Contraseña Nueva" required/>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-8 col-md-offset-5">
-            <a class="btn btn-success" href="#">Guardar</a>
+            <div class="col-md-12 col-md-offset-6">
+                <input  type="submit" class="btn btn-success" value="Guardar Cambios">
+            </div>
         </div>
         `;
         divPerfil.append(plantilla);
@@ -224,3 +228,4 @@ if(window.name == "perfil-paciente"){
     getDatosPacientes();
     getEstadisticas();
 }
+

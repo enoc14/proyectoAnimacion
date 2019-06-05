@@ -14,7 +14,9 @@
 <div id="sub-page-content" class="clearfix margin-top-30">
     <div class="container" style="padding-top: 25px;">
         <h2 class="light bordered main-title">Editar <span>Perfil</span></h2>
-        <div class="row" id="divPerfil"></div>
+        <form class="row" id="divPerfil" action="php/actualizar-datos-paciente.php" method="POST" name="formulario-perfilPaciente">
+        
+        </form>
     </div>
 </div>
 <div id="sub-page-content" class="clearfix">
