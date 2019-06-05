@@ -25,25 +25,27 @@
                     </div>
                     <div class="caption sft big_white" data-x="0" data-y="265" data-speed="1000" data-start="1700"
                         data-easing="easeOutExpo">
-                        <strong>Tipos</strong>
+                        <strong>¿Qué es la esquizofrenia?</strong>
                     </div>
-                    <!--<div class="caption sfr medium_grey" data-x="0" data-y="340" data-speed="1000" data-start="2500" data-easing="easeOutExpo">
-							If you need a doctor for to consectetuer Lorem ipsum dolor, consectetur<br>	adipiscing elit. Ut volutpat eros  adipiscing elit Ut volutpat. </div>
-						<div class="caption sfb" data-x="0" data-y="410" data-speed="2500" data-start="2500" data-easing="easeOutExpo">
-							<a href="index5.html" class="btn btn-rounded btn-bordered">All in one</a>
-						</div>-->
+                    <div class="caption sfr medium_grey" data-x="0" data-y="340" data-speed="1000" data-start="2500" data-easing="easeOutExpo">
+                        Es una enfermedad debilitante psiquiátrica que se asocia con  síntomas clínicos graves, <br/>
+                        como alucinaciones y delirios,  así como importantes déficits sociales y cognitivos. 
+                    </div>
                 </li>
 
 
                 <!-- Slide Right
 					============================================= -->
                 <li data-transition="slideright" data-slotamount="6" data-thumb="">
-                    <img src="images/emergency-services.jpg" alt="image" />
+                    <img src="images/terapia001.jpg" alt="image" />
                     <div class="caption sft" data-x="500" data-y="180" data-speed="2000" data-start="1300"
                         data-easing="easeOutBack"><img src="images/emergency-services-icon.png" alt=""></div>
                     <div class="caption sft big_white" data-x="260" data-y="290" data-speed="1500" data-start="1700"
-                        data-easing="easeOutExpo"><strong>Tipos</strong></div>
-                    <!--<div class="caption sfb medium_grey text-center" data-x="140" data-y="370" data-speed="1500" data-start="2500" data-easing="easeOutExpo"><br><br>Predominan los síntomas catatónicos de la esfera psicomotora o síndrome catatónico.</div>-->
+                        data-easing="easeOutExpo"><strong>¿Qué hace ESQUITER al respecto?</strong></div>
+                    <div class="caption sfb medium_grey text-center" data-x="140" data-y="370" data-speed="1500" data-start="2500" data-easing="easeOutExpo" style="text-shadow: 1px 1px 2px black;">
+                        <br><br>Evitar que los pacientes con esquizofrenia residual presenten un episodio esquizofrénico<br/> 
+                        a través de juegos, los cuales abarcarán el pensamiento analítico y toma de decisiones, uso de los sentidos y memoria.<br/>
+                    </div>
                 </li>
 
 
@@ -93,7 +95,7 @@
 
                 <div class="team-member">
                     <div class="team-thumb">
-                        <img src="images/team-member-img1.jpg" class="img-rounded" alt="">
+                        <img src="images/user001.png" class="img-rounded" alt="">
                     </div>
                     <h5><a href="#.">Pablo Hernández</a><br><span>Desarrollador</span></h5>
                     <p>Diseño e implementación de actividades aritméticas para la estimulación cognitiva del paciente.
@@ -102,7 +104,7 @@
 
                 <div class="team-member">
                     <div class="team-thumb">
-                        <img src="images/team-member-img1.jpg" class="img-rounded" alt="">
+                        <img src="images/user001.png" class="img-rounded" alt="">
                     </div>
                     <h5><a href="#.">Enoc Martínez</a><br><span>Desarrollador</span></h5>
                     <p>Diseño e implementación de actividades de series numéricas para mejorar la concentración del
@@ -111,7 +113,7 @@
 
                 <div class="team-member">
                     <div class="team-thumb">
-                        <img src="images/team-member-img1.jpg" class="img-rounded" alt="">
+                        <img src="images/user001.png" class="img-rounded" alt="">
                     </div>
                     <h5><a href="#.">Miguel San Martín</a><br><span>Desarrollador</span></h5>
                     <p>Diseño e implementación de actividades de asociaciones para estimular la percepción y sentido de

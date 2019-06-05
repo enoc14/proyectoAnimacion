@@ -2,7 +2,7 @@
 
 <!-- Sub Page Banner
 	============================================= -->
-	<section class="sub-page-banner text-center" data-stellar-background-ratio="0.3">
+	<section class="sub-page-banner-jus text-center" data-stellar-background-ratio="0.3">
 
 		<div class="overlay"></div>
 

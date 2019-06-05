@@ -140,6 +140,18 @@ delimiter $$
 delimiter ;
 
 
+
+-- Cambiar Contraseña, Telefono del paciente
+drop procedure if exists setNuevoPasswordTelefono;
+delimiter $$
+    create procedure setNuevoPasswordTelefono(in pass varchar(30), in correo varchar(60), in telefono varchar(10))
+    begin
+        UPDATE USUARIO SET USUARIO.pass_Usuario = pass WHERE USUARIO.correo_Usuario = correo;
+        UPDATE PACIENTE SET PACIENTE.telefono_Paciente = telefono WHERE PACIENTE.correo_Usuario_Paciente = correo;
+    end $$
+delimiter ;
+
+
 # # # # # # # # # # # CREACION DE TRIGGERS # # # # # # # # # # # # #
 
 -- Dar de alta un Usuario antes de Doctor
@@ -174,3 +186,5 @@ call getSesionPaciente('sanma@algo.com','23MS877');
 call insertar_Juego('Series de Colores');
 call getEstadisticaPaciente('miguel_spy@hotmail.com');
 select * from Estadistica
+
+call setNuevoPasswordTelefono('sanma69', 'sanma@algo.com', '8332331835');
