@@ -15,6 +15,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $data = insertarPaciente($nombre, $correo, $fecha, $telefono, $genero, $email_Doctor);
 
     if($data['success']){
+        $datos['success'] = true;
+        /*
         set_time_limit(300);
         require '../correo/php/class/emailForm.class.php';
         $pass = $data['pass'];
@@ -32,9 +34,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $datos['enviado'] = true;
         else
             $datos['enviado'] = "Error, ponte en contacto con el administrador para enviar la contraseña";
-
+        */
     } else
-        $datos['insertado'] = false;
+        $datos['success'] = false;
 
     echo json_encode($datos);
 }

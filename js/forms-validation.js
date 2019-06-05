@@ -269,15 +269,22 @@ if(window.name == 'registrar-paciente'){
 			i++;
 		}
 
-		console.log(liga);
-		
 		var ajax = new XMLHttpRequest();
 		ajax.onreadystatechange = function(){
 			if (this.readyState == 4 && this.status == 200) {
-				console.log(JSON.stringify(ajax.responseText));
-				if (ajax.responseText) {
+				console.log(JSON.stringify(this.responseText));
+				console.log(JSON.parse(this.responseText));
+				var paciente = JSON.parse(this.responseText);
+				console.log(paciente.success);
+				if(paciente.success){
+					alerta.fadeIn(2000);
+					clearInputs();
+				}
+				else
+					alertaw.fadeIn(2000);
+				/*if (ajax.responseText) {
 					var paciente = JSON.parse(ajax.responseText);
-
+					
 					if(!paciente.insertado){
 						alertaw.fadeIn(2000);
 						return;
@@ -289,7 +296,7 @@ if(window.name == 'registrar-paciente'){
 
 				} else {
 					alertaw.fadeIn(2000);
-				}
+				}*/
 			}
 		};
 		ajax.open("POST", "php/registrar-paciente-data.php", true);

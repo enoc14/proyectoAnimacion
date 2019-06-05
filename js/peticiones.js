@@ -30,7 +30,7 @@ if(window.name == "ver-pacientes"){
                     <div class="col-md-6 padding-bottom-60 clearfix">
 
                         <div class="doctors-img">
-                            <img src="images/${datos[i].ruta_Paciente}" class="responsive-img" alt="Paciente" title="${datos[i].nombre_Paciente}">
+                            <img src="${datos[i].ruta_Paciente}" class="responsive-img" alt="Paciente" title="${datos[i].nombre_Paciente}">
                         </div>
 
                         <div class="doctors-detail">
@@ -150,7 +150,7 @@ if(window.name == "perfil-paciente"){
         var plantilla = `
         <div class="col-md-12  padding-bottom-60 clearfix">
             <div class="doctors-img">
-                <img src="images/${datos.ruta_Paciente}" class="responsive-img" alt="Paciente">
+                <a onclick="setFoto(${datos.id_Paciente})" class="point" title="Cambiar foto"><img src="${datos.ruta_Paciente}" id="fotoPaciente" class="responsive-img" alt="Paciente"></a>
             </div>
             <div class="doctors-detail">
                 <input type="text" name="inputNombrePaciente" value="${datos.nombre_Paciente}" disabled/>
@@ -170,6 +170,7 @@ if(window.name == "perfil-paciente"){
         </div>
         <div class="row">
             <div class="col-md-12 col-md-offset-6">
+                <input  type="file" id="btnFile" style="display: none;">
                 <input  type="submit" class="btn btn-success" value="Guardar Cambios">
             </div>
         </div>
@@ -223,6 +224,43 @@ if(window.name == "perfil-paciente"){
             `;
             divEstadisticas.append(plantilla);
         }
+    }
+
+    function setFoto(paciente) {
+        var file = document.getElementById("btnFile");
+        var fotoPaciente = document.getElementById("fotoPaciente");
+        
+        file.onchange = function(event) {
+            var target = event.target || event.srcElement;
+            if (target.value.length == 0) 
+              console.log("No files selected.");
+            else {
+                var ext = target.value.split(".")[1];
+                if(ext == "jpg" || ext == "png" || ext == "jpeg"){
+                    var formData = new FormData();
+                    formData.append("foto", target.files[0]);
+
+                    var ajax = new XMLHttpRequest();
+                    ajax.onreadystatechange = function(){
+                        if(this.readyState == 4 && this.status == 200){
+                            console.log(JSON.stringify(this.responseText));
+                            var photo = JSON.parse(this.responseText);
+                            if(photo.success)
+                                fotoPaciente.src = "images/pacientes/"+photo.nombreFoto;
+                            else
+                                swal ( "Error" ,  "Servidor en mantenimieto, intente más tarde" ,  "error" );
+                        }
+                    };
+
+                    ajax.open('POST', 'php/setFoto.php', true);
+                    ajax.send(formData);
+                }
+                else
+                    swal ( "Ingrese un extensón válida" ,  "La extensión debe ser PNG, JPG ó JPEG" ,  "error" );
+            }
+          }
+
+        file.click();
     }
 
     getDatosPacientes();

@@ -26,7 +26,7 @@
                     <div id="alert-registro" class="alert alert-success alert-dismissable fade in"
                         style="display: none">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <strong>¡Usuario registrado con Éxito!, contraseña enviada a su correo.</strong>
+                        <strong>¡Usuario registrado con Éxito!</strong>
                     </div>
 
                     <div id="alert-registro-d" class="alert alert-danger alert-dismissable fade in"

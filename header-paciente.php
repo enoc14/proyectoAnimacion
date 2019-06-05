@@ -67,6 +67,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" id="color" href="css/main.css">
     <link rel="stylesheet" id="color" href="css/toast.css">
+    <link rel="stylesheet" id="color" href="css/modal.css">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

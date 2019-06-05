@@ -32,7 +32,7 @@ create table PACIENTE(
     fechaNacimiento_Paciente datetime not null,
     telefono_Paciente varchar(10) not null,
     correo_Usuario_Paciente varchar(60) not null,
-    ruta_Paciente varchar(20) not null,
+    ruta_Paciente varchar(100) not null,
     temp_Paciente varchar(30) not null,
     
     constraint PK_PACIENTE primary key(id_Paciente),
@@ -130,7 +130,17 @@ delimiter ;
         end $$
     delimiter ;
     
--- Obtener la información de los pacientes
+-- Obtener la información de un paciente
+    drop procedure if exists getDatosPaciente;
+    delimiter $$
+        create procedure getDatosPaciente(in correo varchar(60))
+        begin
+            select Paciente.nombre_Paciente, DATE_FORMAT(Paciente.fechaNacimiento_Paciente, '%Y') as fecha_Paciente, Paciente.genero_Paciente, Paciente.telefono_Paciente, Paciente.correo_Usuario_Paciente, Paciente.ruta_Paciente, Paciente.id_Paciente
+            from Paciente where Paciente.correo_Usuario_Paciente = correo;
+        end $$
+    delimiter ;
+    
+-- Obtener las estadisticas de los pacientes
 drop procedure if exists getEstadisticaPaciente;
 delimiter $$
 	create procedure getEstadisticaPaciente(in correo varchar(60))
@@ -139,7 +149,7 @@ delimiter $$
 	end $$
 delimiter ;
 
--- Obtener la información de los pacientes
+-- Obtener el modal
 drop procedure if exists getModalPaciente;
 delimiter $$
 	create procedure getModalPaciente(in paciente int(7))
@@ -147,8 +157,6 @@ delimiter $$
 		select Estadistica.id_Juego_Estadistica from Estadistica where Estadistica.id_Paciente_Estadistica = paciente;
 	end $$
 delimiter ;
-
-
 
 -- Cambiar Contraseña, Telefono del paciente
 drop procedure if exists setNuevoPasswordTelefono;
@@ -159,6 +167,16 @@ delimiter $$
         UPDATE PACIENTE SET PACIENTE.telefono_Paciente = telefono WHERE PACIENTE.correo_Usuario_Paciente = correo;
     end $$
 delimiter ;
+
+-- Cambiar foto del paciente
+drop procedure if exists updateFoto;
+delimiter $$
+    create procedure updateFoto(in ruta varchar(100), in correo varchar(60))
+    begin
+        UPDATE PACIENTE SET PACIENTE.ruta_Paciente = ruta WHERE PACIENTE.correo_Usuario_Paciente = correo;
+    end $$
+delimiter ;
+
 
 
 # # # # # # # # # # # CREACION DE TRIGGERS # # # # # # # # # # # # #
@@ -186,16 +204,16 @@ delimiter ;
 
 # # # # # # # # # # # INSERCIONES DE EJEMPLO # # # # # # # # # # # # #
 call insertar_Doctor('Enoc Martínez', 'actec_147@hotmail.com', 'CED213');
-call insertar_Paciente(1, 'Miguel Ángel San Martín', 'Masculino', '2008-07-14', '8334375144', 'sanma@algo.com', 'hombre.png', '23MS877');
+call insertar_Paciente(1, 'Pablo Hernández Vicente', 'Masculino', '2008-07-14', '8334375144', 'pablo@algo.com', 'images/hombre.png', '12345');
 -- select DOCTOR.nombre_Doctor, PACIENTE.nombre_Paciente from PACIENTE join DOCTOR on PACIENTE.id_Doctor_Paciente = DOCTOR.id_Doctor;
-select * from Usuario;
+select * from Paciente;
 
 call getSesionDoctor('enoc.9714@gmail.com','enoc.9714@gmail.com');
 call getSesionPaciente('sanma@algo.com','23MS877');
 call insertar_Juego('Series de Colores');
 call getEstadisticaPaciente('miguel_spy@hotmail.com');
 call getModalPaciente(1);
-select * from Estadistica
-select * from Estadistica
-
+call updateFoto('images/hombre.png', 'pablo090597@gmail.com');
+call getDatosPaciente('pablo@algo.com');
+select * from Estadistica;
 call setNuevoPasswordTelefono('sanma69', 'sanma@algo.com', '8332331835');

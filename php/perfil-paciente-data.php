@@ -1,7 +1,10 @@
 <?php
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
+        session_start();
+        $correo = $_SESSION['correo'];
+        
         include_once "../../mysqli_connect.php";
-        $query = "call getDataPacientes()";
+        $query = "call getDatosPaciente('$correo')";
         $resultado = mysqli_query($conexion, $query) or die (mysqli_error($conexion));
         $datos = array();
         if($resultado){
